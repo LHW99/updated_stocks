@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form method='GET' class='buttons'>
+    {% csrf_token %}
+      <label for='timer'>Sort by most losses in past:</label>
+      <button type='submit' class='btn btn-primary' name='timer' value='1-Month'>1-Month</button> 
+      <button type='submit' class='btn btn-primary' name='timer' value='3-Months'>3-Months</button>
+      <button type='submit' class='btn btn-primary' name='timer' value='6-Months'>6-Months</button>
+      <button type='submit' class='btn btn-primary' name='timer' value='1-Year'>1-Year</button>
+      <button type='submit' class='btn btn-primary' name='timer' value='5-Years'>5-Years</button>
+    </form>
+    <br>
+  <div style='font-size:2vw' class='table-responsive fixed-table-body'>
+    {{ df|safe }}
+  </div>
+{% endblock %}

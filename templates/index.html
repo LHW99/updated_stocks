@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %} <title>Stocks</title> {% endblock %}
+
+{% block content %}
+    <br>
+  <h1 class='front-page'><strong>{{ companyName }} {{ symbol }}</strong></h1>
+  <h3 class='front-page'><strong>{{ latestPrice }}</strong></h3>
+  <table style='margin-left:auto; margin-right:auto;'>
+    <tr>
+      <td>{{ marketCap }}</td><td></td><td>{{ peRatio }}</td>
+    </tr>
+    <tr> 
+      <td>{{ month1ChangePercent }}</td><td>&ensp;&ensp;&ensp;</td><td>{{ month3ChangePercent }}</td>
+    </tr>
+    <tr>
+      <td>{{ month6ChangePercent }}</td><td>    </td><td>{{ year1ChangePercent }}</td>
+    </tr>
+    <tr>
+      <td>{{ week52High }}</td><td>    </td><td>{{ week52Low }}</td>
+    </tr>
+      <td>{{ priceToBook }}</td><td>    </td><td>{{ priceToSales }}</td>
+    <tr>
+  </table>
+
+  <div style='display:flex; justify-content: center' class='row text-center'>
+    <img class='img-responsive center-block' src='{{chart}}'>
+  </div>
+{% endblock %}

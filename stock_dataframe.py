@@ -1,9 +1,9 @@
 import pandas as pd
 import requests
 try:
-  from keys import *
+  from updated_stocks.settings.private_settings import CLOUD_API_KEY
 except:
-  from pro_keys import *
+  from updated_stocks.settings.api import CLOUD_API_KEY
   
 # read csv
 stocks = pd.read_csv('sp_500_stocks.csv')

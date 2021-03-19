@@ -58,33 +58,26 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'updated_stocks.wsgi.application'
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
-# Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
+#if DEVELOPMENT_MODE is True:
+#    DATABASES = {
+#        "default": {
+#            "ENGINE": "django.db.backends.sqlite3",
+#            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+#        }
 #    }
-#}
-
-if DEVELOPMENT_MODE is True:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-        }
-    }
-elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
-    if os.getenv("DATABASE_URL", None) is None:
-        raise Exception("DATABASE_URL environment variable not defined")
-    DATABASES = {
-        "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
-    }
-
-# Password validation
-# https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
+#elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
+#    if os.getenv("DATABASE_URL", None) is None:
+#        raise Exception("DATABASE_URL environment variable not defined")
+#    DATABASES = {
+#        "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
+#    }
 
 AUTH_PASSWORD_VALIDATORS = [
     {

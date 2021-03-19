@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %} <title>Stocks</title> {% endblock %}
+
+{% block content %}
+  <form style='text-align:center;' method='GET'>
+    {% csrf_token %}
+    <input type='search' name='compare1' onfocus="this.value=''" value='Ticker 1'>
+    <input type='search' name='compare2' onfocus="this.value=''" value='Ticker 2'><br>
+    <button style='background-color:black;color:white;border-color:white;margin-top:10px;' type='submit' class='buttons btn btn-secondary'>Compare</button>
+  </form>
+    <br>
+  <table style='margin-left:auto; margin-right:auto;'>
+    <tr>
+      <td><strong>{{ companyName1 }} {{ symbol1 }}</strong></td><td>&ensp;&ensp;&ensp;</td><td><strong>{{ companyName2 }} {{ symbol2 }}</strong></td>
+    </tr>
+    <tr>
+      <td><strong>{{ latestPrice1 }}</strong></td><td>&ensp;&ensp;&ensp;</td><td><strong>{{ latestPrice2 }}</strong></td>
+    </tr>
+    <tr>
+      <td><strong>{{ marketCap1 }}</strong></td><td>&ensp;&ensp;&ensp;</td><td><strong>{{ marketCap2 }}</strong></td>
+    </tr>
+    <tr>
+      <td><strong>{{ year1ChangePercent1 }}</strong></td><td>&ensp;&ensp;&ensp;</td><td><strong>{{ year1ChangePercent2 }}</strong></td>
+    </tr>
+    <tr>
+      <td><strong>{{ week52High1 }}</strong></td><td>&ensp;&ensp;&ensp;</td><td><strong>{{ week52High2 }}</strong></td>
+    </tr>
+    <tr>
+      <td><strong>{{ week52Low1 }}</strong></td><td>&ensp;&ensp;&ensp;</td><td><strong>{{ week52Low2 }}</strong></td>
+    </tr>
+    <tr>
+      <td><strong>{{ peRatio1 }}</strong></td><td>&ensp;&ensp;&ensp;</td><td><strong>{{ peRatio2 }}</strong></td>
+    </tr>
+  </table>
+{% endblock %}
