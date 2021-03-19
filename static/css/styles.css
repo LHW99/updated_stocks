@@ -1,0 +1,66 @@
+* {
+  color:white;
+  background:black;
+}
+
+html, body{
+  width:100%;
+}
+
+.container{
+  width:100%;
+  height: auto;
+}
+
+.front-page{
+  text-align: center;
+}
+
+.front-header{
+  text-align: left;
+  padding:5px 10px 10px 10px;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+a:hover{
+  color:#0dba86;
+}
+
+.center-image{
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.buttons{
+  padding-left:10px;
+}
+
+.buffer{
+  padding-top:160px;
+}
+
+.btn-primary{
+  background-color:black;
+  border-color: white;
+}
+
+.btn-primary:hover{
+  background-color:#0dba86;
+}
+
+.dataframe{
+  width:95%;
+  max-width:95%;
+  text-align:right;
+  padding:auto;
+  margin:auto;
+}
+
+.dataframe th{
+  border:5px;
+}
