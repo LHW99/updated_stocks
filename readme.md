@@ -2,6 +2,8 @@
 
 This is a Django app that provides stock information on the companies listed in the S&P500. You can sort tickers by most gains/losses over various time periods. 
 
+HOST: updated-stocks-7juj2.ondigitalocean.app
+
 This app uses the IEX Cloud API to fill in the varying stock information. However, the key I'm using is for the sandbox mode, so the numbers are not accurate to real market prices!
 
 This django project was inspired by this youtube video: https://www.youtube.com/watch?reload=9&v=xfzGZB4HhEE
